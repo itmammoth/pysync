@@ -1,0 +1,8 @@
+.DS_Store
+.vscode
+
+.venv
+*.pyc
+__pycache__
+
+tests/dest/*

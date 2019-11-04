@@ -1,0 +1,12 @@
+{
+    "destination": "tests/dest",
+    "sources": [
+        {
+            "path": "tests/sources/BackMeUp1",
+            "exclusions": ["*.log", "tmp/"]
+        },
+        {
+            "path": "tests/sources/BackMeUp2"
+        }
+    ]
+}
