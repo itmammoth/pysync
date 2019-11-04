@@ -5,7 +5,7 @@ pysync is a simple rsync wrapper with python.
 
 Create `settings.json` file anywhere you like.
 
-```json
+```hjson
 {
     //
     // pysync - settings.json
