@@ -8,7 +8,8 @@
     // Set source paths to backup
     "sources": [
         {
-            "path": "/Users/whoami/Documents"
+            "path": "/Users/whoami/Documents",
+            "exclusions": [".DS_Store"]
         },
         {
             "path": "/Users/whoami/code",
