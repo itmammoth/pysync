@@ -1,4 +1,4 @@
-import json
+import hjson
 import os
 import subprocess
 from pathlib import Path
@@ -27,7 +27,7 @@ def do_sync(settings_path):
 
 def __load_json(settings_path):
     with open(settings_path, 'rt') as f:
-        return json.load(f)
+        return hjson.load(f)
 
 
 def __get_dest_root_path(destination_path):
