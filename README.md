@@ -1,3 +1,5 @@
+# This is under development...
+
 # pysync
 pysync is a simple rsync wrapper with python.
 

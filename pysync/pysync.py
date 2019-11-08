@@ -13,7 +13,7 @@ def do_sync(settings_path):
 
     for source in settings['sources']:
         source_path = Path(source['path'])
-        rsync_args = ['rsync', '-a', '-v', '-h']
+        rsync_args = ['rsync', '-a', '-v', '-h', '--delete', '--iconv=UTF-8-MAC,UTF-8']
         if 'exclusions' in source:
             for exclusion in source['exclusions']:
                 rsync_args.append('--exclude')
