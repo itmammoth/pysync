@@ -1,7 +1,7 @@
 import os
 import shutil
 from pathlib import Path
-from pysync import pysync
+from pysync import do_sync
 
 
 DEST_PATH = Path('tests/dest/pysync')
@@ -12,7 +12,7 @@ def setup_module(module):
 
 
 def test_do_pysync():
-    pysync.do_sync(settings_path='tests/settings_test.json')
+    do_sync(settings_path='tests/settings_test.json')
 
     hostname = os.uname()[1]
     assert (DEST_PATH / hostname).exists()

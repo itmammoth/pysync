@@ -8,3 +8,7 @@ def main():
     args = parser.parse_args()
     settings_file = args.settings_file or 'settings.json'
     pysync.do_sync(settings_file)
+
+
+if __name__ == '__main__':
+    main()
