@@ -5,7 +5,7 @@ pysync is a simple backup/sync tool with python & rsync.
 # Installation
 
 ```shell
-$ pip install pysync
+$ pip install itm.pysync
 ```
 
 # Usage
@@ -55,17 +55,20 @@ $ pysync
 
 ## Command Line Options
 
-|                   |                                                                 |
+| Option            | Feature                                                         |
 | ----------------- | --------------------------------------------------------------- |
 | -c, --config-file | Indicate config file path (e.x. `pysync -c ~/hoge/pysync.json`) |
 | -h, --help        | Show help                                                       |
 | --version         | Show version                                                    |
 
 # License
+
 MIT License
 
 # Testing
+
 Test with `pytest`.
+
 ```shell
 $ pytest
 ```
