@@ -2,6 +2,7 @@
     //
     // pysync - settings.json
     //
+    //
     // Set destination path
     "destination": "/Volumes/HDD/backup",
     //
@@ -15,5 +16,10 @@
             "path": "/Users/whoami/code",
             "exclusions": ["*.log", "tmp/"]
         }
-    ]
+    ],
+    //
+    // Set rsync options (default: -a -v -h)
+    "rsync": {
+        "options": ["-a", "-v", "-h", "--delete", "--iconv=UTF-8-MAC,UTF-8"]
+    }
 }

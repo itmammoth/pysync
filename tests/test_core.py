@@ -12,7 +12,7 @@ def setup_module(module):
 
 
 def test_do_pysync():
-    do_sync(settings_path='tests/settings_test.json')
+    do_sync(settings_path='tests/pysync_test.json')
 
     hostname = os.uname()[1]
     assert (DEST_PATH / hostname).exists()

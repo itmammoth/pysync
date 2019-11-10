@@ -8,5 +8,8 @@
         {
             "path": "tests/sources/BackMeUp2"
         }
-    ]
+    ],
+    "rsync": {
+        "options": ["-a", "-v", "-h", "--delete"]
+    }
 }
