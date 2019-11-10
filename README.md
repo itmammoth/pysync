@@ -2,6 +2,8 @@
 
 pysync is a simple backup/sync tool with python & rsync.
 
+[日本語版ドキュメント](https://www.ohmyenter.com/simple-backup-tool-pysync/)
+
 # Installation
 
 ```shell
