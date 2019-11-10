@@ -1,6 +1,6 @@
 # pysync
 
-pysync is a simple backup/sync tool with rsync.
+pysync is a simple backup/sync tool with python & rsync.
 
 # Installation
 
