@@ -12,18 +12,25 @@ def do_sync(settings_path):
     dest_root_path = __get_dest_root_path(settings['destination'])
     dest_root_path.mkdir(parents=True, exist_ok=True)
 
+    filters = dig_get(settings, 'filters', [])
+    global_exclusions = dig_get(settings, 'global_exclusions', [])
+
     for source in settings['sources']:
         source_path = Path(source['path'])
         rsync_args = __build_rsync_args(settings)
+        # filter
+        if 'filter' in source:
+            for farg in filters[source['filter']]:
+                rsync_args.append(farg)
         # global exclusions
-        for exclusion in dig_get(settings, 'global_exclusions', []):
+        for ex in global_exclusions:
             rsync_args.append('--exclude')
-            rsync_args.append(exclusion)
+            rsync_args.append(ex)
         # source exclusions
         if 'exclusions' in source:
-            for exclusion in source['exclusions']:
+            for ex in source['exclusions']:
                 rsync_args.append('--exclude')
-                rsync_args.append(exclusion)
+                rsync_args.append(ex)
         rsync_args.append(str(source_path.resolve()))
         rsync_args.append(str(dest_root_path.resolve()))
         subprocess.call(rsync_args)

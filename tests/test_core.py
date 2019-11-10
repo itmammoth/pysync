@@ -29,5 +29,7 @@ def test_do_pysync():
     assert BACK_ME_UP2.exists()
     assert (BACK_ME_UP2 / 'file3.txt').exists()
     assert not (BACK_ME_UP2 / '.DS_Store').exists()
+    assert not (BACK_ME_UP2 / '.git').exists()
+    assert not (BACK_ME_UP2 / 'ignore_me').exists()
 
     assert not (DEST_PATH / 'X').exists()

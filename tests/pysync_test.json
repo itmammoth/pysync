@@ -2,6 +2,9 @@
     "rsync": {
         "options": ["-a", "-v", "-h", "--delete"]
     },
+    "filters": {
+        "git": ["-C", "--filter", ":- .gitignore"]
+    },
     "global_exclusions": [".DS_Store"],
     "destination": "tests/dest",
     "sources": [
@@ -10,7 +13,8 @@
             "exclusions": ["*.log", "tmp/"]
         },
         {
-            "path": "tests/sources/BackMeUp2"
+            "path": "tests/sources/BackMeUp2",
+            "filter": "git"
         }
     ]
 }
