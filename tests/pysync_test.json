@@ -1,7 +1,5 @@
 {
-    "rsync": {
-        "options": ["-a", "-v", "-h", "--delete"]
-    },
+    "rsync_options": ["-a", "-v", "-h", "--delete"],
     "filters": {
         "git": ["-C", "--filter", ":- .gitignore"]
     },
