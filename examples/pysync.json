@@ -3,23 +3,25 @@
     // pysync - settings.json
     //
     //
+    // Set rsync options (default: -a -v -h)
+    "rsync": {
+        "options": ["-a", "-v", "-h", "--delete", "--iconv=UTF-8-MAC,UTF-8"]
+    },
+    //
+    // Set global exclusions
+    "global_exclusions": [".DS_Store"],
+    //
     // Set destination path
     "destination": "/Volumes/HDD/backup",
     //
     // Set source paths to backup
     "sources": [
         {
-            "path": "/Users/whoami/Documents",
-            "exclusions": [".DS_Store"]
+            "path": "/Users/whoami/Documents"
         },
         {
             "path": "/Users/whoami/code",
             "exclusions": ["*.log", "tmp/"]
         }
-    ],
-    //
-    // Set rsync options (default: -a -v -h)
-    "rsync": {
-        "options": ["-a", "-v", "-h", "--delete", "--iconv=UTF-8-MAC,UTF-8"]
-    }
+    ]
 }

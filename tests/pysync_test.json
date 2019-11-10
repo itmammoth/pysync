@@ -1,4 +1,8 @@
 {
+    "rsync": {
+        "options": ["-a", "-v", "-h", "--delete"]
+    },
+    "global_exclusions": [".DS_Store"],
     "destination": "tests/dest",
     "sources": [
         {
@@ -8,8 +12,5 @@
         {
             "path": "tests/sources/BackMeUp2"
         }
-    ],
-    "rsync": {
-        "options": ["-a", "-v", "-h", "--delete"]
-    }
+    ]
 }

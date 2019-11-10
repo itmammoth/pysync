@@ -15,6 +15,11 @@ def do_sync(settings_path):
     for source in settings['sources']:
         source_path = Path(source['path'])
         rsync_args = __build_rsync_args(settings)
+        # global exclusions
+        for exclusion in dig_get(settings, 'global_exclusions', []):
+            rsync_args.append('--exclude')
+            rsync_args.append(exclusion)
+        # source exclusions
         if 'exclusions' in source:
             for exclusion in source['exclusions']:
                 rsync_args.append('--exclude')
