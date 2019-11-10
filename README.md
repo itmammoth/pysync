@@ -1,43 +1,36 @@
-# This is under development...
-
 # pysync
-pysync is a simple rsync wrapper with python.
+
+pysync is a simple backup/sync tool with rsync.
+
+# Installation
+
+```shell
+$ pip install pysync
+```
 
 # Usage
 
-Create `settings.json` file anywhere you like.
+Create `pysync.json` file in `~/.config/pysync.json` or `~/pysync.json`.
 
 ```json5
 {
-    //
-    // pysync - settings.json
-    //
-    // Set destination path
-    "destination": "/Volumes/HDD/backup",
-    //
-    // Set source paths to backup
-    "sources": [
-        {
-            "path": "/Users/whoami/Documents",
-            "exclusions": [".DS_Store"]
-        },
-        // ... expected command: rsync -avh --exclude=".DS_Store" /Users/whoami/Documents /Volumes/HDD/backup
 
-        {
-            "path": "/Users/whoami/code",
-            "exclusions": ["*.log", "tmp/"]
-        }
-        // ... expected command: rsync -avh --exclude="*.log" --exclude="tmp/" /Users/whoami/code /Volumes/HDD/backup
-    ]
 }
-
 ```
 
-Run pysync as a module.
+Run pysync.
 
 ```shell
-$ python -m pysync -f "PATH_TO_YOUR_SETTINGS_JSON"
+$ pysync
 ```
+
+## Command Line Options
+
+|                   |                                                                 |
+| ----------------- | --------------------------------------------------------------- |
+| -c, --config-file | Indicate config file path (e.x. `pysync -c ~/hoge/pysync.json`) |
+| -h, --help        | Show help                                                       |
+| --version         | Show version                                                    |
 
 # License
 MIT License

@@ -1,8 +1,10 @@
 def main():
     import argparse
     from .core import do_sync
+    from . import __version__
     parser = argparse.ArgumentParser()
-    parser.add_argument('-c', '--config-file', help='Indicate config file path')
+    parser.add_argument('-c', '--config-file', help='indicate config file path')
+    parser.add_argument('--version', action='version', version=__version__)
     args = parser.parse_args()
     config_path = __resolve_config_file_path(args.config_file, '~/.config/pysync.json', '~/pysync.json')
     do_sync(config_path)
